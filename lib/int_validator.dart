@@ -13,7 +13,7 @@ class IntValidator implements Validator {
   IntValidator({ String? value, this.isRequired = false, String? extra }) {
     _bloc = ValidatorStateBloc(sanitize(value), false, _check(value, isRequired, extra));
     _focus = FocusNode();
-    _controller = TextEditingController();
+    _controller = TextEditingController(text: value);
     _controller.addListener(() => _setValue(_controller.text));
   }
 
