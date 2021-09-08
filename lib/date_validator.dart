@@ -30,7 +30,7 @@ class DateValidator implements Validator {
 
   static String formatDate(int? timestamp, String mask) {
     if (timestamp == null || timestamp == 0) return "";
-    final DateTime datetime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+    final DateTime datetime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000, isUtc: true);
     return DateFormat(mask).format(datetime);
   }
 
