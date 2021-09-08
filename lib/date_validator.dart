@@ -13,7 +13,7 @@ class DateValidator implements Validator {
   late FocusNode _focus;
   late TextEditingController _controller;
 
-  DateValidator({ int timestamp = 0, this.isRequired = false, String? extra, this.mask = 'DD/MM/YY' }) {
+  DateValidator({ int timestamp = 0, this.isRequired = false, String? extra, this.mask = 'dd/MM/yyyy' }) {
     String strDate = formatDate(timestamp, mask);
     _bloc = ValidatorStateBloc(timestamp, false, _check(formatDate(timestamp, mask), isRequired, extra));
     _focus = FocusNode();
